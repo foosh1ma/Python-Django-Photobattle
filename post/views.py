@@ -1,9 +1,13 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponse
 from .models import *
 
 
 def index(request):
-    return render(request, 'post/index.html')
+    posts = Post.objects.all()
+    if posts:
+        return render(request, 'post/index.html', locals())
+    else:
+        return HttpResponse('no posts yet')
 
 
 def post_detail(request, post_id):
