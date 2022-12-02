@@ -4,10 +4,10 @@ from .models import *
 
 def index(request):
     posts = Post.objects.all()
-    if posts:
-        return render(request, 'post/index.html', locals())
-    else:
-        return HttpResponse('no posts yet')
+    # if posts:
+    return render(request, 'post/index.html', locals())
+    #else:
+        #return HttpResponse('no posts yet')
 
 
 def post_detail(request, post_id):
