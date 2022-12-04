@@ -53,8 +53,14 @@
         <!-- MAIN CONTENT -->
 
         <main>
-            {% block content %}
-            {% endblock %}
+            {% for post in posts %}
+                <div class="post">
+                    <h1>{{ post.name }}</h1>
+                    <h2>{{ post.owner }}</h2>
+                    <img src="{{ post.image.url }}">
+                    <h3>{{ post.description }}</h3>
+                </div>
+            {% endfor %}
         </main>
 
         <!-- Optional JavaScript -->

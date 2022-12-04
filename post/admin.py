@@ -2,5 +2,5 @@ from django.contrib import admin
 from .models import *
 
 
-admin.register(User)
-admin.register(Post)
+admin.site.register(User)
+admin.site.register(Post)
